@@ -5,6 +5,8 @@ import { initializeApp } from "firebase/app";
 import { useEffect } from 'react';
 import { RecoilRoot, useRecoilState, useSetRecoilState } from 'recoil';
 import { userAtom } from './store/atoms/user';
+import { Topbar } from './components/topbar';
+import { Card } from './components/card';
 
 const firebaseConfig = {
     apiKey: "AIzaSyB0-Fg9SE5_8Z5XGJz4M4o4ZzFv_oMs36c",
@@ -55,12 +57,14 @@ function StoreApp() {
     return <div><Signin /></div>
   }
   return (
-    <>
-      You are logged in as {user.user?.email}
+    <div className="place-items-center grid"> 
+      <div className="max-w-screen-lg w-full">
+      <Topbar />
+      <Card> hi there </Card>
      
-    </>
+    </div>
+  </div>
   )
-  return
 }
 
 export default App
